@@ -20,19 +20,4 @@ public class Locacoes {
 
         return retorno;
     }
-
-    public String gerarLista(){
-        String lista = "";
-        int contador = 1;
-
-        for (Aluguel item: alugueis){
-            lista += "Aluguel #" + contador + "\n";
-            lista += item.gerarDescricao();
-            lista += "\n\n";
-
-            contador++;
-        }
-
-        return lista;
-    }
 }

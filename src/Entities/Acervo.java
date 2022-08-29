@@ -45,20 +45,4 @@ public class Acervo {
 
         return retorno.isEmpty() ? null : retorno;
     }
-
-    public String gerarLista(){
-        String lista = "";
-        int contador = 1;
-        int contadorAlugueis = 1;
-
-        for (Alugavel item: acervo){
-            lista += "Alugável #" + contador + "\n";
-            lista += item.gerarDescricao();
-            lista += "\n\n";
-
-            contador++;
-        }
-
-        return lista;
-    }
 }

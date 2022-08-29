@@ -53,8 +53,16 @@ public class Aluguel {
         this.valorFinal = valorFinal;
     }
     
-    public double setValorFinal(){
+    public double getValorFinal(){
         return this.valorFinal;
+    }
+
+    public Alugavel getAlugavel() {
+        return this.alugavel;
+    }
+
+    public void setAlugavel(Alugavel alugavel){
+        this.alugavel = alugavel;
     }
     
     public double calculaValorTotal(){

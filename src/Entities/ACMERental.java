@@ -46,11 +46,11 @@ public class ACMERental {
             System.out.println("=========================================\n");
             System.out.println("Opcoes:");
             System.out.println("[1] Mostrar todos os dados cadastrados.");
-            System.out.println("[2] Pesquisar item alugavel pelo código.");
-            System.out.println("[3] Pesquisar itens alugaveis pelo nome.");
-            System.out.println("[4] Pesquisar alugueis de um cliente.");
+            System.out.println("[2] Pesquisar item alugável pelo código.");
+            System.out.println("[3] Pesquisar itens alugáveis pelo nome.");
+            System.out.println("[4] Pesquisar aluguéis de um cliente.");
             System.out.println("[0] Sair.");
-            System.out.print("Digite a opcao desejada: ");
+            System.out.print("Digite a opção desejada: ");
             opcao = entrada.nextInt();
             entrada.nextLine();
             switch(opcao) {
@@ -69,7 +69,7 @@ public class ACMERental {
                 case 0:
                     break;
                 default:
-                    System.out.println("Opcao invalida.");
+                    System.out.println("Opcao inválida.");
                 }
         }
         while(opcao != 0);
@@ -141,9 +141,10 @@ public class ACMERental {
             String lista = "\n";
             int contador = 1;
             for (Aluguel item: resultado){
-                lista += "Alugel #" + contador + "\n";
+                lista += "Aluguel #" + contador + "\n";
                 lista += item.gerarDescricao();
                 lista += "\n\n";
+                contador++;
             }
             System.out.println(lista);
         }

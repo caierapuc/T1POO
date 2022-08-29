@@ -9,6 +9,15 @@ public class Alugavel {
     private String marca;
     private String modelo;
     private ArrayList<Aluguel> alugueis;
+    
+    public Alugavel() {
+        this.codigo =  0;
+        this.nome = "";
+        this.precoDiario = 10.0;
+        this.marca = "";
+        this.modelo = "";
+        this.alugueis = new ArrayList<Aluguel>();
+    }
 
     public Alugavel(int codigo, String nome, double precoDiario, String marca, String modelo) {
         this.codigo =  codigo;
@@ -17,15 +26,6 @@ public class Alugavel {
         this.marca = marca;
         this.modelo = modelo;
         this.alugueis = new ArrayList<Aluguel>();
-    }
-
-    public Alugavel(int codigo, String nome, double precoDiario, String marca, String modelo, ArrayList<Aluguel> alugueis) {
-        this.codigo =  codigo;
-        this.nome = nome;
-        this.precoDiario = precoDiario;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.alugueis = alugueis;
     }
 
     public int getCodigo(){
@@ -81,7 +81,7 @@ public class Alugavel {
     }
 
     public String gerarDescricao(){
-        String descricao = "Código: " + this.codigo + "\nNome: " + this.nome + "\nMarca: " + this.marca + "\nModelo: " + this.modelo + "\n\n";
+        String descricao = "Código: " + this.codigo + "\nNome: " + this.nome + "\nMarca: " + this.marca + "\nModelo: " + this.modelo + "\nPreço Diário: " + this.precoDiario + "\n\n";
         if (this.alugueis.size() > 0){
             int contador = 1;
             for (Aluguel aluguel: this.alugueis){

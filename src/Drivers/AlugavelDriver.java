@@ -2,10 +2,9 @@ package Drivers;
 
 import Entities.*;
 
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
-import org.junit.experimental.theories.suppliers.TestedOn;
-import org.junit.jupiter.api.*;
 
 public class AlugavelDriver {
 
@@ -56,5 +55,59 @@ public class AlugavelDriver {
         resultado.add(aluguel);
 
         assertEquals(resultado, alugavel.getAlugueis()); 
+    }
+
+    @Test
+    public void setCodigoTeste(){
+        Alugavel alugavel = new Alugavel(10, "TesteNome", 500, "TesteMarca", "TesteModelo");
+
+        alugavel.setCodigo(11);
+
+        assertEquals(11, alugavel.getCodigo());
+    }
+
+    @Test
+    public void setNomeTeste(){
+        Alugavel alugavel = new Alugavel(10, "TesteNome", 500, "TesteMarca", "TesteModelo");
+
+        alugavel.setNome("SetNomeTeste");
+
+        assertEquals("SetNomeTeste", alugavel.getNome());
+    }
+
+    @Test
+    public void setPrecoDiarioTeste(){
+        Alugavel alugavel = new Alugavel(10, "TesteNome", 500, "TesteMarca", "TesteModelo");
+
+        alugavel.setPrecoDiario(1000.40);
+
+        assertEquals(1000.40, alugavel.getPrecoDiario());
+    }
+
+    @Test
+    public void setMarcaTeste(){
+        Alugavel alugavel = new Alugavel(10, "TesteNome", 500, "TesteMarca", "TesteModelo");
+
+        alugavel.setMarca("SetMarcaTeste");
+
+        assertEquals("SetMarcaTeste", alugavel.getMarca());
+    }
+
+    @Test
+    public void setModeloTeste(){
+        Alugavel alugavel = new Alugavel(10, "TesteNome", 500, "TesteMarca", "TesteModelo");
+
+        alugavel.setMarca("SetModeloTeste");
+
+        assertEquals("SetModeloTeste", alugavel.getMarca());
+    }
+
+    @Test
+    public void gerarDescricaoTeste(){
+        Alugavel alugavel = new Alugavel(10, "TesteNome", 500, "TesteMarca", "TesteModelo");
+        Aluguel aluguel = new Aluguel("11/11/1111", 1, "111.111.111-11", "Neymar Junior", alugavel);
+        alugavel.addAluguel(aluguel);
+        
+        assertEquals("Código: 10\nNome: TesteNome\nMarca: TesteMarca\nModelo: TesteModelo\nPreço Diário: 500.0\n\nAluguel #1\nCodigo do Item: 10\nData: 11/11/1111\nPeríodo: 1 dias\nCPF: 111.111.111-11\nNome: Neymar Junior\nValor Final: 500.0\n\n", alugavel.gerarDescricao());
     }
 }

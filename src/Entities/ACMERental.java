@@ -96,6 +96,7 @@ public class ACMERental {
         System.out.println("\n=========================================\n");
         System.out.print("Insira o código a ser buscado: ");
         int codigo = entrada.nextInt();
+        entrada.nextLine();
 
         Alugavel alugavel = this.acervo.pesquisaAlugavel(codigo);
 
@@ -127,10 +128,12 @@ public class ACMERental {
         System.out.println("\n=========================================\n");
         System.out.print("Insira o CPF a ser buscado (000.000.000-00): ");
         String cpf = entrada.nextLine();
+        entrada.nextLine();
 
         while (cpf.length() != 14){
             System.out.print("Formato incorreto, tente novamente: ");
             cpf = entrada.nextLine();
+            entrada.nextLine();
         }
 
         cpf = cpf.replace(",", ".");

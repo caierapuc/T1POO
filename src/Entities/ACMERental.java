@@ -55,7 +55,7 @@ public class ACMERental {
             aux = entrada.nextLine();
 
             while (!aux.matches("[+-]?\\d*(\\.\\d+)?")){
-                System.out.print("Tipo de dado inválid0, tente novamente: ");
+                System.out.print("Tipo de dado inválido, tente novamente: ");
                 aux = entrada.nextLine();
             }
 
@@ -107,7 +107,7 @@ public class ACMERental {
         aux = entrada.nextLine();
 
         while (!aux.matches("[+-]?\\d*(\\.\\d+)?")){
-            System.out.print("Tipo de dado inválid0, tente novamente: ");
+            System.out.print("Tipo de dado inválido, tente novamente: ");
             aux = entrada.nextLine();
         }
 

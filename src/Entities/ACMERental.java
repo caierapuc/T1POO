@@ -42,6 +42,7 @@ public class ACMERental {
 
     public void executa(){
         int opcao = 0;
+        String aux = "";
         do {
             System.out.println("=========================================\n");
             System.out.println("Opcoes:");
@@ -51,8 +52,15 @@ public class ACMERental {
             System.out.println("[4] Pesquisar aluguéis de um cliente.");
             System.out.println("[0] Sair.");
             System.out.print("Digite a opção desejada: ");
-            opcao = entrada.nextInt();
-            entrada.nextLine();
+            aux = entrada.nextLine();
+
+            while (!aux.matches("[+-]?\\d*(\\.\\d+)?")){
+                System.out.print("Tipo de dado inválid0, tente novamente: ");
+                aux = entrada.nextLine();
+            }
+
+            opcao = Integer.parseInt(aux);
+
             switch(opcao) {
                 case 1:
                     this.mostrarTodosOsDados();
@@ -93,10 +101,17 @@ public class ACMERental {
     
     //Pesquisar item alugavel pelo codigo
     public void pesquisarAlugavelPorCodigo(){
+        String aux = "";
         System.out.println("\n=========================================\n");
         System.out.print("Insira o código a ser buscado: ");
-        int codigo = entrada.nextInt();
-        entrada.nextLine();
+        aux = entrada.nextLine();
+
+        while (!aux.matches("[+-]?\\d*(\\.\\d+)?")){
+            System.out.print("Tipo de dado inválid0, tente novamente: ");
+            aux = entrada.nextLine();
+        }
+
+        int codigo = Integer.parseInt(aux);
 
         Alugavel alugavel = this.acervo.pesquisaAlugavel(codigo);
 
@@ -128,12 +143,10 @@ public class ACMERental {
         System.out.println("\n=========================================\n");
         System.out.print("Insira o CPF a ser buscado (000.000.000-00): ");
         String cpf = entrada.nextLine();
-        entrada.nextLine();
 
         while (cpf.length() != 14){
             System.out.print("Formato incorreto, tente novamente: ");
             cpf = entrada.nextLine();
-            entrada.nextLine();
         }
 
         cpf = cpf.replace(",", ".");

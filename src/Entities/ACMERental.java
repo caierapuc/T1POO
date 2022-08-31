@@ -54,8 +54,8 @@ public class ACMERental {
             System.out.print("Digite a opção desejada: ");
             aux = entrada.nextLine();
 
-            while (!aux.matches("[+-]?\\d*(\\.\\d+)?")){
-                System.out.print("Tipo de dado inválido, tente novamente: ");
+            while (!aux.matches("[0-4]")){
+                System.out.print("Opção inválida");
                 aux = entrada.nextLine();
             }
 
